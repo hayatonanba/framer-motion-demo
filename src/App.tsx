@@ -26,12 +26,12 @@ function App() {
             {logoList.map((logo) => (
               <li key={logo.id}>
                 <a href={logo.url} target="_blank" draggable="false">
-                  <img
+                  <motion.img
                     src={logo.img}
                     alt={`${logo.id} logo`}
                     className="w-[80px] h-[80px]"
-                    animate={{rotate: [0, 360]}}
-                    transition={{duration: 2, repeat: Infinity}}
+                    animate={logo.id == 'react' ? { rotate: [0, 360] } : {}}
+                    transition={logo.id == 'react' ? { duration: 2, repeat: Infinity, ease: 'linear' } : {}}
                   />
                 </a>
               </li>
